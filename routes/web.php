@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DetailsController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/cv', [DetailsController::class, 'create'])->name('details.create');
+Route::post('/cv', [DetailsController::class, 'store'])->name('details.cv');
