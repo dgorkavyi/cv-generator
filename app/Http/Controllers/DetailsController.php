@@ -9,7 +9,7 @@ class DetailsController extends Controller
 {
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -25,7 +25,10 @@ class DetailsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        extract($request->all());
+        // dd($fullname, $email, $address, $phone);
+        Details::create($request->all());
+        return back();
     }
 
     /**
